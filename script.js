@@ -3,7 +3,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Gestion du menu actif
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     document.querySelectorAll('.nav ul li a').forEach(link => {
-        if (link.getAttribute('href') === currentPage) {
+        // On récupère le href sans le slash initial
+        const linkHref = link.getAttribute('href').replace(/^\//, '');
+        if (linkHref === currentPage) {
             link.classList.add('active');
         }
     });
@@ -213,4 +215,15 @@ document.addEventListener('DOMContentLoaded', function() {
             applyTheme(themes[themeIndex]);
         });
     }
+
+    // Menu burger responsive
+    document.querySelectorAll('.nav').forEach(nav => {
+        const navToggle = nav.querySelector('.nav-toggle');
+        const navUl = nav.querySelector('ul');
+        if (navToggle && navUl) {
+            navToggle.addEventListener('click', function() {
+                navUl.classList.toggle('open');
+            });
+        }
+    });
 });

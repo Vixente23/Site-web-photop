@@ -135,9 +135,7 @@ body {
 }
 
 /* Nav principale */
-.nav ul {
-    display: flex;
-}
+
 
 .header:hover .nav ul,
 .nav:hover ul {
@@ -169,6 +167,14 @@ body {
     width: 100%;
     height: 2px;
     background-color: #00bfff; /* bleu ciel */
+}
+
+/* Ajoute pour desktop uniquement */
+@media (min-width: 801px) {
+    .nav ul {
+        display: flex;
+        flex-direction: row;
+    }
 }
 
 /* Hero Section */
@@ -501,6 +507,45 @@ body {
     .footer-content { grid-template-columns: 1fr; }
 }
 
+/* Responsive navbar pour le menu burger */
+@media (max-width: 800px) {
+    .nav-toggle {
+        display: block;
+        background: none;
+        border: none;
+        font-size: 2rem;
+        color: #fff;
+        cursor: pointer;
+        margin-right: 10px;
+    }
+    .nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: var(--header-bg);
+        position: absolute;
+        top: 60px;
+        left: 0;
+        z-index: 1000;
+        padding: 10px 0;
+    }
+    .nav ul.open {
+        display: flex;
+    }
+    .nav ul li {
+        margin: 10px 0 10px 20px;
+    }
+}
+
+/* Par défaut, cache le bouton burger sur desktop */
+/* Masquer le bouton seulement sur les écrans larges */
+@media(min-width: 768px) {
+  .nav-toggle {
+    display: none;
+  }
+}
+
+
 /* Ajouts pour about.html */
 .about-grid {
     display: grid;
@@ -658,4 +703,211 @@ body {
 
 .contact-list li a:hover {
     color: #00bfff;            /* bleu ciel */
+}
+
+/* Responsive pour petits smartphones */
+@media (max-width: 480px) {
+    .container {
+        width: 100%;
+        padding: 0 5px;
+    }
+    .logo {
+        font-size: 18px;
+    }
+    .hero h1 {
+        font-size: 22px;
+    }
+    .hero p {
+        font-size: 14px;
+    }
+    .gallery-box, .gallery-item {
+        height: 120px;
+    }
+    .about-section h2,
+    .gallery-preview h2 {
+        font-size: 24px;
+    }
+    .footer-content {
+        gap: 10px;
+    }
+}
+
+/* Responsive pour smartphones et petites tablettes */
+@media (min-width: 481px) and (max-width: 767px) {
+    .container {
+        width: 98%;
+        padding: 0 10px;
+    }
+    .logo {
+        font-size: 20px;
+    }
+    .hero h1 {
+        font-size: 28px;
+    }
+    .hero p {
+        font-size: 16px;
+    }
+    .gallery-box, .gallery-item {
+        height: 160px;
+    }
+    .about-section h2,
+    .gallery-preview h2 {
+        font-size: 28px;
+    }
+}
+
+/* Responsive pour tablettes (portrait et paysage) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .container {
+        width: 96%;
+    }
+    .gallery-grid,
+    .gallery-preview .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    .about-grid,
+    .contact-grid,
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+    .pricing-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    .gallery-box, .gallery-item {
+        height: 200px;
+    }
+}
+
+/* Responsive spécifique pour la section À propos sur mobile */
+@media (max-width: 600px) {
+    .about-section {
+        padding: 40px 0;
+    }
+    .about-grid {
+        display: block;
+        gap: 0;
+    }
+    .about-image {
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    .about-image img {
+        width: 80vw;
+        max-width: 250px;
+        margin: 0 auto;
+        display: block;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    .about-section h2 {
+        font-size: 22px;
+        margin-bottom: 18px;
+    }
+    .about-section p {
+        font-size: 15px;
+        padding: 0 5px;
+        text-align: left;
+    }
+}
+
+/* Responsive spécifique pour le footer sur mobile */
+@media (max-width: 600px) {
+    .footer-content {
+        display: block;
+        padding: 0 10px;
+        gap: 0;
+    }
+    .footer-section {
+        margin-bottom: 25px;
+        text-align: left;
+    }
+    .footer-section:last-child {
+        margin-bottom: 0;
+    }
+    .footer-section h3 {
+        font-size: 18px;
+        margin-bottom: 12px;
+    }
+    .footer-section p,
+    .footer-section li {
+        font-size: 14px;
+    }
+    .social-icons {
+        justify-content: flex-start;
+        gap: 10px;
+        margin-bottom: 10px;
+    }
+    .copyright {
+        font-size: 12px;
+        padding-top: 10px;
+    }
+}
+
+/* Responsive spécifique pour la section Contact sur mobile */
+@media (max-width: 600px) {
+    .contact-grid {
+        display: block;
+        gap: 0;
+        margin: 30px 0;
+    }
+    .contact-info {
+        margin-bottom: 25px;
+    }
+    .contact-info h2 {
+        font-size: 20px;
+        margin-bottom: 12px;
+    }
+    .contact-list {
+        padding-left: 10px;
+    }
+    .contact-list li {
+        font-size: 14px;
+        margin-bottom: 10px;
+        padding-left: 24px;
+    }
+    .contact-list li .contact-icon {
+        font-size: 16px;
+        top: 3px;
+    }
+    .map {
+        margin-top: 15px;
+    }
+    .map img {
+        width: 90vw;
+        max-width: 350px;
+        margin: 0 auto;
+        display: block;
+        border-radius: 10px;
+    }
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+        font-size: 15px;
+        padding: 10px;
+    }
+    .submit-btn {
+        width: 100%;
+        padding: 12px 0;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 800px) {
+    .header .container {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .nav {
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+    }
+    .nav-toggle {
+        display: block;
+        margin-left: auto;
+        margin-right: 0;
+        /* garde les autres styles existants */
+    }
 }
