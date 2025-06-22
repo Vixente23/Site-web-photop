@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <script src="/script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adinsi Lephotographe | Galerie</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header (identique à index.html) -->
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">Adinsi Lephotographe</a>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="about.html">À propos</a></li>
+                    <li><a href="gallery.html" class="active">Galerie</a></li>
+                    <li><a href="pricing.html">Tarifs</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Gallery Hero -->
+    <section class="page-hero" style="background-image: url('images/riage0.jpg')">
+        <div class="hero-content">
+            <h1>Ma galerie</h1>
+        </div>
+    </section>
+
+    <!-- Gallery Filters -->
+    <section class="gallery-filters">
+        <div class="container">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">Tous</button>
+                <button class="filter-btn" data-filter="portrait">Portraits</button>
+                <button class="filter-btn" data-filter="wedding">Mariages</button>
+                <button class="filter-btn" data-filter="nature">Me</button>
+                <button class="filter-btn" data-filter="family">Famille</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Content -->
+    <section class="gallery-content">
+        <div class="container">
+            <div class="gallery-grid">
+                <!-- Portrait féminin (plusieurs images) -->
+                <div class="gallery-box" data-category="portrait">
+                    <div class="image-carousel">
+                        <img src="images/femi.jpg" alt="Portrait féminin " class="active">
+                        <img src="images/femi2.jpg" alt="Portrait féminin ">
+                        <img src="images/femi3.jpg" alt="Portrait féminin ">
+                        <img src="images/femi4.jpg" alt="Portrait féminin ">
+                        <img src="images/femi5.jpg" alt="Portrait féminin ">
+                        <img src="images/femi6.jpg" alt="Portrait féminin ">
+                        <img src="images/femi7.jpg" alt="Portrait féminin ">
+                        <img src="images/femi8.jpg" alt="Portrait féminin ">
+                        <img src="images/femi9.jpg" alt="Portrait féminin">
+                        <img src="images/femi0.jpg" alt="Portrait féminin ">
+                    </div>
+                    <div class="overlay">
+                        <h3>Portrait féminin</h3>
+                        <p>Voir les photos</p>
+                    </div>
+                </div>
+                <!-- Mariage -->
+                <div class="gallery-box" data-category="wedding">
+                    <div class="image-carousel">
+                        <img src="images/riage.jpg" alt="mariage " class="active">
+                        <img src="images/riage2.jpg" alt="mariage ">
+                        <img src="images/riage3.jpg" alt="mariage ">
+                        <img src="images/riage4.jpg" alt="mariage ">
+                        <img src="images/riage5.jpg" alt="mariage ">
+                        <img src="images/riage6.jpg" alt="mariage ">
+                        <img src="images/riage7.jpg" alt="mariage ">
+                        <img src="images/riage8.jpg" alt="mariage ">
+                        <img src="images/riage9.jpg" alt="mariage ">
+                        <img src="images/riage0.jpg" alt="mariage ">
+                    </div>
+                    <div class="overlay">
+                        <h3>Cérémonie de mariage</h3>
+                        <p>Voir la photo</p>
+                    </div>
+                </div>
+                <!-- Nature -->
+                <div class="gallery-box" data-category="nature">
+                    <div class="image-carousel">
+                        <img src="images/me.jpg" alt="Me" class="active">
+                        <img src="images/me2.jpg" alt="Me">
+                        <img src="images/me3.jpg" alt="Me">
+                        <img src="images/me4.jpg" alt="Me">
+                        <img src="images/me5.jpg" alt="Me">
+                        <img src="images/me6.jpg" alt="Me">
+                        <img src="images/me7.jpg" alt="Me">
+                        <img src="images/me8.jpg" alt="Me">
+                        <img src="images/me9.jpg" alt="Me">
+                        <img src="images/me0.jpg" alt="Me">
+                    </div>
+                    <div class="overlay">
+                        <h3>Me</h3>
+                        <p>Voir la photo</p>
+                    </div>
+                </div>
+                <!-- Portrait studio -->
+                <div class="gallery-box" data-category="portrait">
+                    <div class="image-carousel">
+                        <img src="images/stud.jpg" alt="Portrait studio" class="active">
+                        <img src="images/stud2.jpg" alt="Portrait">
+                        <img src="images/stud3.jpg" alt="Portrait">
+                        <img src="images/stud4.jpg" alt="Portrait">
+                        <img src="images/stud5.jpg" alt="Portrait">
+                        <img src="images/stud6.jpg" alt="Portrait">
+                        <img src="images/stud7.jpg" alt="Portrait">
+                        <img src="images/stud8.jpg" alt="Portrait">
+                        <img src="images/stud9.jpg" alt="Portrait">
+                        <img src="images/stud0.jpg" alt="Portrait">
+                    </div>
+                    <div class="overlay">
+                        <h3>Portrait en studio</h3>
+                        <p>Voir la photo</p>
+                    </div>
+                </div>
+                <!-- Famille -->
+                <div class="gallery-box" data-category="family">
+                    <div class="image-carousel">
+                        <img src="images/mifa.jpg" alt="Famille " class="active">
+                        <img src="images/mifa2.jpg" alt="Famille ">
+                        <img src="images/mifa3.jpg" alt="Famille ">
+                        <img src="images/mifa4.jpg" alt="Famille ">
+                        <img src="images/mifa5.jpg" alt="Famille ">
+                        <img src="images/mifa6.jpg" alt="Famille ">
+                        <img src="images/mifa7.jpg" alt="Famille ">
+                        <img src="images/mifa8.jpg" alt="Famille ">
+                        <img src="images/mifa9.jpg" alt="Famille ">
+                        <img src="images/mifa0.jpg" alt="Famille ">
+                    </div>
+                    <div class="overlay">
+                        <h3>Séance famille</h3>
+                        <p>Voir la photo</p>
+                    </div>
+                </div>
+                <!-- Portrait artistique -->
+                <div class="gallery-box" data-category="portrait">
+                    <div class="image-carousel">
+                        <img src="images/art.jpg" alt="Portrait artistique" class="active">
+                        <img src="images/art2.jpg" alt="artistique">
+                        <img src="images/art3.jpg" alt="artistique">
+                        <img src="images/art4.jpg" alt="artistique">
+                        <img src="images/art5.jpg" alt="artistique">
+                        <img src="images/art6.jpg" alt="artistique">
+                        <img src="images/art7.jpg" alt="artistique">
+                        <img src="images/art8.jpg" alt="artistique">
+                        <img src="images/art9.jpg" alt="artistique">
+                        <img src="images/art0.jpg" alt="artistique">
+                        <img src="images/art8.jpg" alt="artistique">
+                        <img src="images/art10.jpg" alt="artistique">
+                        <img src="images/art11.jpg" alt="artistique">
+                        <img src="images/art12.jpg" alt="artistique">
+                        <img src="images/art13.jpg" alt="artistique">
+                        <img src="images/art14.jpg" alt="artistique">
+                        <img src="images/art15.jpg" alt="artistique">
+                    </div>
+                    <div class="overlay">
+                        <h3>Portrait artistique</h3>
+                        <p>Voir la photo</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox globale à placer juste avant </body> -->
+    <div id="lightbox" class="lightbox" style="display:none;">
+        <span class="close-lightbox">&times;</span>
+        <div class="lightbox-content">
+            <img id="lightbox-image" src="" alt="">
+            <div class="lightbox-caption"></div>
+        </div>
+        <a class="prev">&#10094;</a>
+        <a class="next">&#10095;</a>
+    </div>
+
+    <!-- Footer (identique à index.html) -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Adinsi Lephotographe</h3>
+                    <p>Photographe professionnelle spécialisée en portrait, mariage et nature.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>adinsilephotographe@gmail.com</p>
+                    <p>+241 77929853</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Réseaux sociaux</h3>
+                    <div class="social-icons">
+                        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
+                        <a href="https://www.facebook.com/AdinsiOfficiel"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
+                        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Adinsi Lephotographe. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
