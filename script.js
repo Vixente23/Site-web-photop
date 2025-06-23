@@ -227,3 +227,142 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+// Loader
+document.addEventListener('DOMContentLoaded', function() {
+    const loader = document.createElement('div');
+    loader.className = 'loader';
+    loader.innerHTML = '<div class="loader-circle"></div>';
+    document.body.prepend(loader);
+    
+    setTimeout(() => {
+        loader.classList.add('hidden');
+    }, 1500);
+    
+    // Scroll indicator in hero
+    const scrollIndicator = document.createElement('div');
+    scrollIndicator.className = 'scroll-indicator';
+    scrollIndicator.innerHTML = '↓';
+    document.querySelector('.hero-content').appendChild(scrollIndicator);
+    
+    // Floating effect for hero image
+    const heroImage = document.querySelector('.hero');
+    if (heroImage) {
+        heroImage.classList.add('hero-image');
+    }
+    
+    // Scroll animations for sections
+    const animateOnScroll = function() {
+        const elements = document.querySelectorAll('.about-section, .gallery-preview, .gallery-item, .pricing-card, .footer-section');
+        elements.forEach(element => {
+            const elementPosition = element.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+            
+            if (elementPosition < windowHeight - 100) {
+                element.classList.add('visible');
+            }
+        });
+    };
+    
+    // Initialize on load
+    animateOnScroll();
+    window.addEventListener('scroll', animateOnScroll);
+    
+    // Header scroll effect
+    window.addEventListener('scroll', function() {
+        const header = document.querySelector('.header');
+        if (window.scrollY > 100) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+    
+    // Stats counter
+    const counters = document.querySelectorAll('.counter');
+    const speed = 200;
+    
+    function animateCounters() {
+        counters.forEach(counter => {
+            const target = +counter.getAttribute('data-target');
+            const count = +counter.innerText;
+            const increment = target / speed;
+            
+            if (count < target) {
+                counter.innerText = Math.ceil(count + increment);
+                setTimeout(animateCounters, 1);
+            } else {
+                counter.innerText = target;
+            }
+        });
+    }
+    
+    // Start counters when section is visible
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCounters();
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+    
+    counters.forEach(counter => {
+        observer.observe(counter.parentElement);
+    });
+    
+    // Enhanced hover effects for service cards
+    const serviceCards = document.querySelectorAll('.service-card');
+    serviceCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-5px)';
+            this.style.boxShadow = '0 10px 20px rgba(0, 0, 0, 0.1)';
+            const icon = this.querySelector('.service-icon');
+            if (icon) icon.style.color = 'var(--btn-bg)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = '';
+            this.style.boxShadow = '';
+            const icon = this.querySelector('.service-icon');
+            if (icon) icon.style.color = '';
+        });
+    });
+    
+    // Enhanced hover effects for project cards
+    const projectCards = document.querySelectorAll('.project-card');
+    projectCards.forEach(card => {
+        const image = card.querySelector('.project-image');
+        const overlay = card.querySelector('.project-overlay');
+        
+        card.addEventListener('mouseenter', function() {
+            if (image) image.style.transform = 'scale(1.05)';
+            if (overlay) overlay.style.opacity = '0.9';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            if (image) image.style.transform = '';
+            if (overlay) overlay.style.opacity = '';
+        });
+    });
+    
+    // Mobile menu animation
+    const navToggle = document.querySelector('.nav-toggle');
+    if (navToggle) {
+        navToggle.addEventListener('click', function() {
+            this.classList.toggle('open');
+        });
+    }
+    
+    // Button hover effects
+    const buttons = document.querySelectorAll('.btn, .btn-secondary');
+    buttons.forEach(button => {
+        button.addEventListener('mouseenter', function() {
+            this.style.boxShadow = '0 5px 15px rgba(0, 191, 255, 0.4)';
+        });
+        
+        button.addEventListener('mouseleave', function() {
+            this.style.boxShadow = '';
+        });
+    });
+});

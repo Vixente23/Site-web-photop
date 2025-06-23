@@ -911,3 +911,136 @@ body {
         /* garde les autres styles existants */
     }
 }
+
+/* Loader */
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--main-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 1;
+    transition: opacity 0.5s ease-out;
+}
+
+.loader.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.loader-circle {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid var(--btn-bg);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Scroll indicator */
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+    40% { transform: translateY(-20px) translateX(-50%); }
+    60% { transform: translateY(-10px) translateX(-50%); }
+}
+
+/* Floating hero image */
+.hero-image {
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+/* Section animations */
+.about-section, 
+.gallery-preview, 
+.gallery-item, 
+.pricing-card,
+.footer-section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.about-section.visible,
+.gallery-preview.visible, 
+.gallery-item.visible, 
+.pricing-card.visible,
+.footer-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Service cards hover */
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.service-card:hover .service-icon {
+    color: var(--btn-bg);
+}
+
+/* Project cards hover */
+.project-card:hover .project-image {
+    transform: scale(1.05);
+}
+
+.project-card:hover .project-overlay {
+    opacity: 0.9;
+}
+
+/* Header scroll effect */
+.header.scrolled {
+    padding: 10px 0;
+    background-color: rgba(0, 0, 0, 0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Button hover effects */
+.btn:hover, 
+.btn-secondary:hover {
+    box-shadow: 0 5px 15px rgba(0, 191, 255, 0.4);
+}
+
+/* Mobile menu animation */
+.nav-toggle {
+    transition: transform 0.3s ease;
+}
+
+.nav-toggle.open {
+    transform: rotate(90deg);
+}
+
+/* Stats counter */
+.counter {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--btn-bg);
+}
+
+/* Smooth transitions for gallery items */
+.gallery-item {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
